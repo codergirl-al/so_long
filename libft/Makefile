@@ -6,18 +6,15 @@
 #    By: apeposhi <apeposhi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/17 14:25:17 by apeposhi          #+#    #+#              #
-#    Updated: 2023/01/17 11:26:40 by apeposhi         ###   ########.fr        #
+#    Updated: 2023/02/27 08:32:09 by apeposhi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # PROJECT #
 NAME	= libft.a
-CC		= @clang
+CC		= @cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= @rm -f
-FILE	= $(shell ls -lR src/ | grep -F .c | wc -l)
-CMP		= 1
-CLEAR	= @clear
 
 SRC		= ./src/memory/ft_bzero.c\
 	      ./src/check/ft_isalpha.c\
@@ -68,6 +65,9 @@ SRC		= ./src/memory/ft_bzero.c\
 		  ./src/list/ft_lstclear.c\
 		  ./src/list/ft_lstiter.c\
 		  ./src/list/ft_lstmap.c\
+		  ./ft_printf/ft_printf.c\
+		  ./get_next_line/get_next_line.c\
+		  ./get_next_line/get_next_line_utils.c\
 
 OBJ=$(SRC:.c=.o)
 
@@ -86,5 +86,6 @@ re: fclean all
 
 .SILENT:
 	all
+
 .PHONY: 
 	all clean fclean re
